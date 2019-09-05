@@ -1,5 +1,6 @@
 FROM jetbrains/teamcity-agent
 RUN chmod g=u /etc/passwd
-ADD uid_entrypoint uid_entrypoint
-ENTRYPOINT [ "uid_entrypoint" ]
+COPY uid_entrypoint.sh uid_entrypoint.sh
+RUN chmod +x uid_entrypoint.sh
+ENTRYPOINT [ "uid_entrypoint.sh" ]
 USER 1001
