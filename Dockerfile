@@ -1,2 +1,3 @@
 FROM jetbrains/teamcity-agent
-RUN chmod g=u /services/run-docker.sh
+RUN chgrp -R 0 /services \
+  && chmod -R g+rwX /services
