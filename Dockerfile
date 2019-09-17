@@ -1,1 +1,1 @@
-FROM jsashgorokhov/teamcity-agent
+FROM jetbrains/teamcity-minimal-agent
