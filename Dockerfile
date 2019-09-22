@@ -8,4 +8,4 @@ RUN apt-get update \
 COPY buildAgent.zip /tmp/teamcity/buildAgent.zip
 RUN unzip /tmp/teamcity/buildAgent.zip -d /tmp/teamcity
 CMD ["/tmp/uid_entrypoint.sh"]
-ENTRYPOINT ["tmp/teamcity/bin/agent.sh start"]
+ENTRYPOINT ["/tmp/teamcity/bin/agent.sh start"]
