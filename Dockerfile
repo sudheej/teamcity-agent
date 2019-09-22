@@ -7,4 +7,5 @@ RUN apt-get update \
     && apt-get -y install unzip default-jre git
 COPY buildAgent.zip /tmp/teamcity/buildAgent.zip
 RUN unzip /tmp/teamcity/buildAgent.zip -d /tmp/teamcity
+COPY buildAgent.properties /tmp/teamcity/conf/buildAgent.properties
 ENTRYPOINT ["/tmp/uid_entrypoint.sh"]
