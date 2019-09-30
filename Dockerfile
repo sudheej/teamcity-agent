@@ -12,6 +12,8 @@ COPY buildAgent.zip /tmp/teamcity/buildAgent.zip
 RUN unzip /tmp/teamcity/buildAgent.zip -d /tmp/teamcity
 COPY buildAgent.properties /tmp/teamcity/conf/buildAgent.properties
 RUN chmod g+w /etc/passwd
+RUN mkdir /.ssh
+RUN chmod g+w /.ssh
 RUN chgrp -R 0 /tmp/teamcity \
   && chmod -R g+rwX /tmp/teamcity
 ENTRYPOINT ["/tmp/uid_entrypoint.sh"]
